@@ -3,12 +3,12 @@ from typing import Literal, Annotated
 from config.city_tier import tier_1_cities, tier_2_cities
 
 
-# pydantic model to validate incoming data
+# pydantic model to validate incoming data from the user
 class UserInput(BaseModel):
 
-    age: Annotated[int, Field(..., gt=0, lt=120, description='Age of the user')]
-    weight: Annotated[float, Field(..., gt=0, description='Weight of the user')]
-    height: Annotated[float, Field(..., gt=0, lt=2.5, description='Height of the user')]
+    age: Annotated[int, Field(..., gt=0, lt=120, description='Age of the User')]
+    weight: Annotated[float, Field(..., gt=0, description='Weight of the User')]
+    height: Annotated[float, Field(..., gt=0, lt=2.5, description='Height of the User')]
     income_lpa: Annotated[float, Field(..., gt=0, description='Annual salary of the user in lpa')]
     smoker: Annotated[bool, Field(..., description='Is user a smoker')]
     city: Annotated[str, Field(..., description='The city that the user belongs to')]
